@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+<resources>
+
+    <string name="app_name">UFRGS Mobile</string>
+
+    <string name="news">Notícias</string>
+    <string name="library">Biblioteca</string>
+    <string name="restaurant">Restaurante</string>
+    <string name="settings">Configurações</string>
+
+    <string name="accept">Aceito</string>
+    <string name="not_accept">Não aceito</string>
+    <string name="error">Erro</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="reservation_word">reserva</string>
+    <string name="reservations_word">reservas</string>
+    <string name="loan_word">empréstimo</string>
+    <string name="loans_word">empréstimos</string>
+    <string name="no_debt">Sem débitos</string>
+    <string name="debt_word">débito</string>
+    <string name="renew">Renovação</string>
+    <string name="no_loan">Nenhum empréstimo</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="signing_in">Fazendo login</string>
+    <string name="share_article">Compartilhar Notícia</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="no_books">Sem livros</string>
+    <string name="auto_renew">Renovação automática</string>
+    <string name="renewing_items">Renovando itens</string>
+    <string name="no_reservation">Nenhuma reserva</string>
+    <string name="page_not_found">Página não encontrada</string>
+    <string name="menu_unavailable">Cardápio indisponível</string>
+    <string name="no_restaurant_to_show">Nenhum RU para exibir</string>
+    <string name="no_connection">Sem conexão</string>
+
+    <string name="menu_not_ready_yet_message">O cardápio ainda não chegou</string>
+    <string name="no_loan_books_found">Não foram encontrados livros emprestados</string>
+    <string name="connection_error_message">Erro de conexão com a internet.</string>
+    <string name="we_tried_to_renew_your_items">Tentamos Renovar Seus Itens</string>
+    <string name="verify_return_date">Verifique a data de entrega.</string>
+
+    <string name="overloaded_system_message">Sistema sobrecarregado. Por favor, tente novamente.</string>
+    <string name="no_restaurant_to_show_message">Não há RUs para exibir. Verifique as configurações do aplicativo.</string>
+    <string name="no_connection_message">O aplicativo necessita de conexão com a internet para funcionar corretamente.</string>
+    <string name="not_possible_to_renew_books_message">Não foi possível renovar seus livros. Por favor, tente novamente.</string>
+    <string name="auto_renew_activate_warning_message">Seus itens serão renovados diariamente, desde que não haja impedimento.\nÉ de sua responsabilidade verificar se todos os itens foram renovados.</string>
+    <string name="library_no_connection_error">Não foi possível se conectar com a biblioteca.\n Por favor, verifique suas configurações ou tente novamente.</string>
+
+    <string name="reais_currency" translatable="false">R$</string>
+
+    <!-- Preferences keys -->
+    <string name="pref_library_category" translatable="false">pref_library</string>
+    <string name="pref_library_username" translatable="false">pref_library_username</string>
+    <string name="pref_library_password" translatable="false">pref_library_password</string>
+    <string name="pref_library_autorenew" translatable="false">pref_library_autorenew</string>
+    <string name="pref_restaurant_category" translatable="false">pref_restaurant</string>
+    <string name="pref_restaurant_list" translatable="false">pref_restaurant_list</string>
+    <string name="library_user">Usuário</string>
+    <string name="library_user_message">Usuário utilizado na biblioteca</string>
+    <string name="password">Senha</string>
+    <string name="library_password_message">Senha da biblioteca</string>
+    <string name="witch_restaurants_to_show">Quais restaurantes exibir?</string>
+    <string name="restaurants_to_show">Restaurantes a exibir</string>
+
+</resources>

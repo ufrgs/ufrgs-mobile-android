@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+<resources>
+    <color name="chumbo">#212121</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#16a086</color>
+    <color name="green_dark">#25535b</color>
+    <color name="grey">#DDDDDD</color>
+    <color name="grey_very_dark">#333333</color>
+    <color name="grey_dark">#777777</color>
+    <color name="grey_light">#DDD</color>
+    <color name="blue_def">#4d92df</color>
+    <color name="black">#000000</color>
+    <color name="holo_blue">#33b5e5</color>
+    <color name="holo_blue2">#0099cc</color>
+    <color name="mainRed">#e34540</color>
+    <color name="secondRed">#D32F2F</color>
+    <color name="black_semi_transparent">#B2000000</color>
+
+    <color name="owl_dark">#475cc6</color>
+
+    <color name="pureRed">#FFFF0000</color>
+</resources>

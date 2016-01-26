@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/book_list_item.title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_marginTop="15dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textIsSelectable="false"
+        android:textSize="16sp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/news_list_item.thumb_image"
+        android:layout_alignParentLeft="true"
+        android:paddingRight="60dp"
+        tools:text="O mundo codificado: por uma filosofia do design e da comunicação"
+        />
+
+    <TextView
+        android:id="@+id/book_list_item.author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="6dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentLeft="false"
+        android:layout_alignLeft="@+id/book_list_item.title"
+        android:layout_below="@+id/book_list_item.title"
+        android:textSize="14sp"
+        tools:text="Flusser, Villem"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_list_item.author"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="6dp"
+        >
+
+        <TextView
+            android:id="@+id/book_list_item.library"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:layout_toLeftOf="@+id/book_list_item.date"
+            android:maxLines="1"
+            android:layout_marginBottom="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/grey_dark"
+            android:layout_weight="1"
+            tools:text="Biblioteca FBC"
+            />
+
+        <TextView
+            android:id="@+id/book_list_item.date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textColor="@color/secondRed"
+            android:layout_alignTop="@+id/book_list_item.library"
+            tools:text="25/08/2015"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#ddd"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

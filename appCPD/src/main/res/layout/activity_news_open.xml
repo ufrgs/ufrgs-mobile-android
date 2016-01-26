@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+    <include
+		android:id="@+id/news_open.toolbar"
+		layout="@layout/toolbar"
+        />
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+
+		<ScrollView
+			android:id="@+id/news_activity.scroll_view"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			>
+
+			<RelativeLayout
+				android:id="@+id/news_activity.layout"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="0sp"
+				android:layout_marginLeft="0dp"
+				android:layout_marginRight="0dp"
+				>
+
+				<ImageView
+					android:id="@+id/news_activity.picture"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_marginTop="0sp"
+					android:adjustViewBounds="true"
+					android:scaleType="centerCrop"
+					tools:src="@drawable/ru1"
+					/>
+
+				<TextView
+					android:id="@+id/news_activity.title"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="0sp"
+					android:paddingTop="10sp"
+					android:paddingLeft="20sp"
+					android:paddingRight="20sp"
+					android:paddingBottom="10sp"
+					android:layout_below="@+id/news_activity.picture"
+					android:textColor="#ffffff"
+					android:background="#e34540"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+					tools:text="Super noticia para testar o layout com multiplas linhas na atividade"
+					/>
+
+				<TextView
+					android:id="@+id/news_activity.text"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:paddingTop="10dp"
+					android:paddingLeft="20sp"
+					android:paddingRight="20sp"
+					android:layout_below="@+id/news_activity.title"
+					android:textSize="16sp"
+					android:lineSpacingMultiplier="1.4"
+					tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in ligula viverra, volutpat nibh et, vehicula nunc. Morbi in volutpat metus, at luctus erat. Integer tincidunt, quam in pellentesque rutrum, nisl lacus auctor enim, vel facilisis ex felis id eros. Proin at neque placerat, feugiat mi vitae, tincidunt tellus. Aenean in dui quis nulla dignissim laoreet eget id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum scelerisque nunc odio, at pulvinar leo ultricies vitae. Nam a pretium turpis. Donec facilisis mi eu varius fringilla. Nullam eget est non eros dictum feugiat et et magna. Phasellus dignissim diam nisi, in euismod metus ullamcorper ac. Suspendisse et enim dui. Sed porta faucibus sapien non viverra. Quisque volutpat turpis nec porta viverra. Curabitur at sagittis dolor."
+				/>
+
+			</RelativeLayout>
+
+		</ScrollView>
+
+	</LinearLayout>
+
+</LinearLayout>
