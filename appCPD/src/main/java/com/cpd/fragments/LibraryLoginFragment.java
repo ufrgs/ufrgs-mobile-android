@@ -17,6 +17,7 @@ package com.cpd.fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -28,8 +29,8 @@ import android.view.ViewGroup;
 import com.cpd.exceptions.OverloadedSystemException;
 import com.cpd.network.LibraryLoader;
 import com.cpd.network.parsers.LibraryParser;
-import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.AppTags;
+import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.DebugUtils;
 import com.cpd.vos.LibraryUserVo;
 
@@ -69,7 +70,7 @@ public class LibraryLoginFragment extends Fragment {
         }
 
         //TODO: Check how SABi works with login to other types of input (as passport) to handle this user in a more effective way.
-        if( userLogin.length() < 8 && userLogin.length() > 0 ){
+        if( userLogin.length() < 8 && userLogin.length() > 0 && onlyNumer(userLogin)){
             String tempuser = "";
             int i = 8 - userLogin.length();
             while(i > 0) {
@@ -105,29 +106,40 @@ public class LibraryLoginFragment extends Fragment {
 
     }
 
-    private void openLibraryFragment(LibraryUserVo user) {
-        // Change fragment
-        FragmentTransaction trans = getFragmentManager().beginTransaction();
-        LibraryFragment fragment = new LibraryFragment();
-        fragment.setUserInfo(user);
-        trans.replace(R.id.root_biblio_layout, fragment);
-        trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        trans.commit();
+    private boolean onlyNumer(String in) {
+        return in.matches("[0-9]+");
     }
 
-    private void openErrorFragment(Exception exception) {
+    private void openLibraryFragment(final LibraryUserVo user) {
+        if(isAdded()) {
+            // Change fragment
+            FragmentTransaction trans = getFragmentManager().beginTransaction();
+            LibraryFragment fragment = new LibraryFragment();
+            fragment.setUserInfo(user);
+            trans.replace(R.id.root_biblio_layout, fragment);
+            trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            trans.commit();
+        }
+    }
+
+
+    private void openErrorFragment(final Exception exception) {
+
         LibraryFragmentError fragmentError = new LibraryFragmentError();
-        if (exception != null){
-            if(exception instanceof OverloadedSystemException){
+        if (exception != null) {
+            if (exception instanceof OverloadedSystemException) {
                 fragmentError.setError(LibraryFragmentError.ERROR_OVERLOAD_SYSTEM);
             }
         }
 
         // Change fragment
-        FragmentTransaction trans = getFragmentManager().beginTransaction();
-        trans.replace(R.id.root_biblio_layout, fragmentError);
-        trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        trans.commit();
+        if (isAdded()) {
+            FragmentTransaction trans = getFragmentManager().beginTransaction();
+            trans.replace(R.id.root_biblio_layout, fragmentError);
+            trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            trans.commit();
+        }
     }
+
 
 }

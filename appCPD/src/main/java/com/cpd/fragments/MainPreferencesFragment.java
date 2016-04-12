@@ -27,6 +27,7 @@ import android.preference.PreferenceFragment;
 import com.cpd.activities.MainPreferencesActivity;
 import com.cpd.receivers.LibraryRenewAlarmBroadcastReceiver;
 import com.cpd.ufrgsmobile.R;
+import com.cpd.utils.TrackerUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -141,8 +142,19 @@ public class MainPreferencesFragment extends PreferenceFragment implements Share
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if(isAdded()) {
-            // We cannot update a fragment that is not attached to a activity
-            updateFields();
+            if (key.equals(getString(R.string.pref_library_username)))
+                TrackerUtils.usernameEdit();
+            if (key.equals(getString(R.string.pref_library_password)))
+                TrackerUtils.passwordEdit();
+            if (key.equals(getString(R.string.pref_library_autorenew)))
+                TrackerUtils.autoRenewSwitch();
+            if (key.equals(getString(R.string.pref_restaurant_list)))
+                TrackerUtils.restaurantListEdit();
+
+            if (isAdded()) {
+                // We cannot update a fragment that is not attached to a activity
+                updateFields();
+            }
         }
     }
 }

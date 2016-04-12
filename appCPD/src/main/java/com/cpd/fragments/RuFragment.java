@@ -15,8 +15,8 @@
  */
 package com.cpd.fragments;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -27,8 +27,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cpd.adapters.RuAdapter;
-import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.AppTags;
+import com.cpd.ufrgsmobile.R;
 
 /**
  * RU Fragment.

@@ -15,13 +15,14 @@
  */
 package com.cpd.activities;
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.cpd.ufrgsmobile.R;
+import com.cpd.utils.TrackerUtils;
 
 public class MainPreferencesActivity extends AppCompatActivity {
 
@@ -34,10 +35,17 @@ public class MainPreferencesActivity extends AppCompatActivity {
 
         mFragmentManager = getSupportFragmentManager();
 
+        TrackerUtils.openSettings();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_preferences_toolbar);
         TextView title = (TextView) toolbar.findViewById(R.id.toolbar_title);
         title.setText(R.string.settings);
         setSupportActionBar(toolbar);
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //No call for super(). Bug on API Level > 11.
     }
 }

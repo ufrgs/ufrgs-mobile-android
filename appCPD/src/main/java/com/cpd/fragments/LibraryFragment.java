@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -66,6 +67,8 @@ public class LibraryFragment extends Fragment {
 
 	private LibraryUserVo mUserVo;
 
+	private SwipeRefreshLayout mRefreshLayout;
+
 	public void setUserInfo(LibraryUserVo user){
 		this.mUserVo = user;
 	}
@@ -89,6 +92,7 @@ public class LibraryFragment extends Fragment {
 			}
 		});
 		mEmptyLayout = (RelativeLayout) view.findViewById(R.id.library_fragment_books_layout);
+		mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.library_fragment_swipe_layout);
 
         // Load adapter
 		mLibraryRecycler = (RecyclerView) view.findViewById(R.id.library_fragment_books_recycler);
@@ -109,7 +113,46 @@ public class LibraryFragment extends Fragment {
 			mLibraryRecycler.setVisibility(View.INVISIBLE);
 		}
 
+		// Set refresh
+		mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+			@Override
+			public void onRefresh() {
+				updateUserInfo();
+			}
+		});
+
 	    return view;
+	}
+
+	private void updateUserInfo() {
+		mLibraryLoader.loadUser(new LibraryParser.LibraryUserReady() {
+			@Override
+			public void onLibraryUserReady(LibraryUserVo user) {
+				mUserVo = user;
+				mAdapter.updateUser(user);
+				mAdapter.notifyDataSetChanged();
+				if(mRefreshLayout.isRefreshing()) {
+					mRefreshLayout.post(new Runnable() {
+						@Override
+						public void run() {
+							mRefreshLayout.setRefreshing(false);
+						}
+					});
+				}
+			}
+
+			@Override
+			public void onLibraryUserError(Exception exception) {
+				if(mRefreshLayout.isRefreshing()) {
+					mRefreshLayout.post(new Runnable() {
+						@Override
+						public void run() {
+							mRefreshLayout.setRefreshing(false);
+						}
+					});
+				}
+			}
+		}, true);
 	}
 
 	private void renewBooks() {
@@ -122,8 +165,9 @@ public class LibraryFragment extends Fragment {
 			@Override
 			public void onLibraryRenewReady(String response) {
 				snackbar.dismiss();
-				showDialog(getActivity().getString(R.string.renew), response);
-				mAdapter.notifyDataSetChanged();
+				if(response != null || response.isEmpty())
+					showDialog(getActivity().getString(R.string.renew), response);
+				updateUserInfo();
 			}
 
 			@Override
@@ -171,18 +215,24 @@ public class LibraryFragment extends Fragment {
 				debtString;
 	}
 
-	private void showDialog(String title, String message){
-		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setMessage(message).setTitle(title);
-		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	private void showDialog(final String title, final String message){
+		getActivity().runOnUiThread(new Runnable() {
 			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
+			public void run() {
+				AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+				builder.setMessage(message).setTitle(title);
+				builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				});
+
+				AlertDialog dialog = builder.create();
+				dialog.show();
 			}
 		});
 
-		AlertDialog dialog = builder.create();
-		dialog.show();
 
 	}
 

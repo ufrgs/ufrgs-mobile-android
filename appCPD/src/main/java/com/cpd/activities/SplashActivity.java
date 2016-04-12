@@ -20,13 +20,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 
-import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.ConnectionUtils;
+import com.cpd.ufrgsmobile.R;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
+import io.fabric.sdk.android.Fabric;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import io.kimo.konamicode.KonamiCode;
 
 /**
  * Splash screen activity launched when the app starts.
@@ -44,6 +50,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Answers(), new Crashlytics());
         setContentView(R.layout.activity_splash_screen);
     }
 

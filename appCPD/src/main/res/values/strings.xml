@@ -51,13 +51,14 @@
     <string name="menu_not_ready_yet_message">O cardápio ainda não chegou</string>
     <string name="no_loan_books_found">Não foram encontrados livros emprestados</string>
     <string name="connection_error_message">Erro de conexão com a internet.</string>
-    <string name="we_tried_to_renew_your_items">Tentamos Renovar Seus Itens</string>
-    <string name="verify_return_date">Verifique a data de entrega.</string>
+
+    <string name="we_tried_to_renew_your_items_notification_title">Renovação de empréstimos da biblioteca</string>
+    <string name="verify_return_date_notification_message">Verifique se todos os seus itens foram renovados.</string>
 
     <string name="overloaded_system_message">Sistema sobrecarregado. Por favor, tente novamente.</string>
     <string name="no_restaurant_to_show_message">Não há RUs para exibir. Verifique as configurações do aplicativo.</string>
     <string name="no_connection_message">O aplicativo necessita de conexão com a internet para funcionar corretamente.</string>
-    <string name="not_possible_to_renew_books_message">Não foi possível renovar seus livros. Por favor, tente novamente.</string>
+    <string name="not_possible_to_renew_books_message">Não foi possível renovar seus itens. Por favor, tente novamente.</string>
     <string name="auto_renew_activate_warning_message">Seus itens serão renovados diariamente, desde que não haja impedimento.\nÉ de sua responsabilidade verificar se todos os itens foram renovados.</string>
     <string name="library_no_connection_error">Não foi possível se conectar com a biblioteca.\n Por favor, verifique suas configurações ou tente novamente.</string>
 

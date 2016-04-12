@@ -84,7 +84,7 @@ public class LibraryAdapter extends RecyclerView.Adapter {
     }
 
     private String formatLibraryCode(String libraryCode) {
-        return mContext.getString(R.string.library) + libraryCode;
+        return mContext.getString(R.string.library) + " " + libraryCode;
     }
 
     private String formatDate(Date date) {

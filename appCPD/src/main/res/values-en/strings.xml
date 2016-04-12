@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+<resources>
+    <string name="app_name">UFRGS Mobile</string>
+    <string name="accept">Agree</string>
+    <string name="auto_renew">Auto renew</string>
+    <string name="auto_renew_activate_warning_message">Your items will be renewed daily, since there no impediment for it. It is your responsability verify if all items were renewed.</string>
+    <string name="connection_error_message">Connection error.</string>
+    <string name="date_format">MM/dd/yyyy</string>
+    <string name="debt_word">debt</string>
+    <string name="error">Error</string>
+    <string name="library">Library</string>
+    <string name="library_no_connection_error">It was not possible to connect with the library.\n Please verify your settings or try again.</string>
+    <string name="loan_word">loan</string>
+    <string name="loans_word">loans</string>
+    <string name="menu_not_ready_yet_message">The menu is not available yet</string>
+    <string name="menu_unavailable">Menu not available</string>
+    <string name="news">News</string>
+    <string name="no_books">No books</string>
+    <string name="no_connection">No connection</string>
+    <string name="no_connection_message">The app requires an internet connection to work properly.</string>
+    <string name="no_debt">No debts</string>
+    <string name="no_loan">No loan</string>
+    <string name="no_loan_books_found">There were no loan books found</string>
+    <string name="no_reservation">No reservations</string>
+    <string name="no_restaurant_to_show">No restaurant to show</string>
+    <string name="no_restaurant_to_show_message">There is no restaurant to show. Please verify your app settings.</string>
+    <string name="not_accept">Decline</string>
+    <string name="not_possible_to_renew_books_message">It was not possible to renew your items. Please try again.</string>
+    <string name="overloaded_system_message">Overloaded system. Please try again.</string>
+    <string name="page_not_found">Page not found</string>
+    <string name="renew">Renew</string>
+    <string name="renewing_items">Renewing items</string>
+    <string name="reservation_word">reservation</string>
+    <string name="reservations_word">reservations</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="settings">Settings</string>
+    <string name="share_article">Share article</string>
+    <string name="signing_in">Logging in</string>
+    <string name="try_again">Try again</string>
+    <string name="verify_return_date_notification_message">Verify if your items were renewed.</string>
+    <string name="we_tried_to_renew_your_items_notification_title">Library renew</string>
+    <string name="library_password_message">Library password</string>
+    <string name="library_user">User</string>
+    <string name="library_user_message">User used on the library</string>
+    <string name="password">Password</string>
+    <string name="restaurants_to_show">Restaurants to show</string>
+    <string name="witch_restaurants_to_show">Which restaurants to show?</string>
+</resources>

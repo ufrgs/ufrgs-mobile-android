@@ -15,12 +15,20 @@
  */
 package com.cpd.activities;
 
+import com.cpd.network.NewsLoader;
+import com.cpd.network.parsers.NewsParser;
+import com.cpd.ufrgsmobile.*;
+import com.cpd.utils.AppTags;
+import com.cpd.utils.ConnectionUtils;
+import com.cpd.utils.DebugUtils;
+import com.cpd.utils.TrackerUtils;
+import com.cpd.vos.NewsVo;
+import com.squareup.picasso.Picasso;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -31,15 +39,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.cpd.network.NewsLoader;
-import com.cpd.network.parsers.NewsParser;
-import com.cpd.ufrgsmobile.R;
-import com.cpd.utils.AppTags;
-import com.cpd.utils.ConnectionUtils;
-import com.cpd.utils.DebugUtils;
-import com.cpd.vos.NewsVo;
-import com.squareup.picasso.Picasso;
+import android.support.v7.widget.ShareActionProvider;
+import android.support.v4.view.MenuItemCompat;
 
 /**
  * Shows one full article.
@@ -70,6 +71,8 @@ public class NewsOpenActivity extends AppCompatActivity{
 
 		Intent intent = getIntent();
 		mNewsVo = (NewsVo) intent.getSerializableExtra(AppTags.NEWS_VO);
+
+		TrackerUtils.clickNewsArticle(mNewsVo.title);
 
 		final TextView articleTextView = (TextView) findViewById(R.id.news_activity_text);
 
@@ -126,6 +129,15 @@ public class NewsOpenActivity extends AppCompatActivity{
 
 		ShareActionProvider shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
         shareActionProvider.setShareIntent(getDefaultShareIntent());
+		shareActionProvider.setOnShareTargetSelectedListener(new ShareActionProvider.OnShareTargetSelectedListener() {
+			@Override
+			public boolean onShareTargetSelected(ShareActionProvider source, Intent intent) {
+				String shareTarget = intent.getComponent().getPackageName();
+				TrackerUtils.shareNewsArticle(mNewsVo.title,shareTarget);
+
+				return false;
+			}
+		});
  
 	    return super.onCreateOptionsMenu(menu);
 	}
@@ -144,6 +156,7 @@ public class NewsOpenActivity extends AppCompatActivity{
 	}
 
     private void openImageActivity(){
+		TrackerUtils.openArticleImage(mNewsVo.title);
         Intent intent = new Intent(this, NewsOpenImageActivity.class);
         intent.putExtra(AppTags.NEWS_VO, mNewsVo);
         startActivity(intent);

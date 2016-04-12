@@ -40,10 +40,12 @@ public class LibraryRootFragment extends Fragment{
 
         View view = inflater.inflate(R.layout.root_biblio, container, false);
 
-        FragmentTransaction transaction = getFragmentManager() .beginTransaction();
-        transaction.replace(R.id.root_biblio_layout, new LibraryLoginFragment());
+        if(isAdded()) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.root_biblio_layout, new LibraryLoginFragment());
 
-        transaction.commit();
+            transaction.commit();
+        }
 
         return view;
     }

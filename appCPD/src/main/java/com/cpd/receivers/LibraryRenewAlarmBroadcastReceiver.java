@@ -31,8 +31,8 @@ import android.util.Log;
 
 import com.cpd.activities.MainActivity;
 import com.cpd.network.LibraryLoader;
-import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.AppTags;
+import com.cpd.ufrgsmobile.R;
 
 import java.util.Calendar;
 
@@ -70,7 +70,7 @@ public class LibraryRenewAlarmBroadcastReceiver extends BroadcastReceiver {
         loader.renewBooks(null, true);
 
         if(value == DAILY_RETRIES){
-            launchNotification(context, context.getString(R.string.we_tried_to_renew_your_items), context.getString(R.string.verify_return_date));
+            launchNotification(context, context.getString(R.string.we_tried_to_renew_your_items_notification_title), context.getString(R.string.verify_return_date_notification_message));
             editor.putInt(AppTags.ALARM_COUNTER, 0);
             editor.commit();
         }

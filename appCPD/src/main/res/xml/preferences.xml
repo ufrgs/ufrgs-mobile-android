@@ -27,14 +27,14 @@
             android:title="@string/library_user"
             android:key="@string/pref_library_username"
             android:summary="@string/library_user_message"
-            android:inputType="number"
+            android:inputType="text"
             />
 
         <EditTextPreference
             android:title="@string/password"
             android:key="@string/pref_library_password"
             android:summary="@string/library_password_message"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:password="true"
             />
 

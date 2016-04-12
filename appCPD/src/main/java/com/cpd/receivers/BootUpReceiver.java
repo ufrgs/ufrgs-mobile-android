@@ -22,6 +22,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.content.WakefulBroadcastReceiver;
 
 import com.cpd.ufrgsmobile.R;
+import com.cpd.utils.AppTags;
 
 /**
  * Receiver to set library auto-renew when Android starts.

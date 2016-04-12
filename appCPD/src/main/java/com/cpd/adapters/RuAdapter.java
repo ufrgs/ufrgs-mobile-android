@@ -28,8 +28,8 @@ import android.view.ViewGroup;
 
 import com.cpd.network.RuLoader;
 import com.cpd.network.parsers.RuParser;
-import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.AppTags;
+import com.cpd.ufrgsmobile.R;
 import com.cpd.viewHolders.RuViewHolder;
 import com.cpd.vos.RuVo;
 import com.squareup.picasso.Picasso;

@@ -57,9 +57,11 @@ public class LibraryFragmentError extends Fragment {
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction = getFragmentManager() .beginTransaction();
-                transaction.replace(R.id.root_biblio_layout, new LibraryLoginFragment());
-                transaction.commit();
+                if(isAdded()) {
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.root_biblio_layout, new LibraryLoginFragment());
+                    transaction.commit();
+                }
             }
         });
 

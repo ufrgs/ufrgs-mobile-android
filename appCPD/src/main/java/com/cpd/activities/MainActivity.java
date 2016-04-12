@@ -30,6 +30,7 @@ import com.cpd.adapters.ViewPagerAdapter;
 import com.cpd.ufrgsmobile.R;
 import com.cpd.utils.AppTags;
 
+
 /**
  * App's main activity. Configures the tabs to be loaded with the fragments.
  *
@@ -114,5 +115,10 @@ public class MainActivity extends AppCompatActivity {
 		if(requestCode == AppTags.UFRGS_OPTIONS){
 			mPagerAdapter.notifyDataSetChanged();
 		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		//No call for super(). Bug on API Level > 11.
 	}
 }

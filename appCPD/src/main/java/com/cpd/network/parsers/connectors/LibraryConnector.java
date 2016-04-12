@@ -56,7 +56,8 @@ import java.util.Random;
  * @author Theodoro Mota
  * @version 2.0
  */
-public class LibraryConnector {
+public class
+LibraryConnector {
 
     private static final String TAG = LibraryConnector.class.getSimpleName();
 
@@ -207,18 +208,22 @@ public class LibraryConnector {
             Elements infoTables = doc.select("td.td1");
             int numeroDeTables = infoTables.size();
 
-            if((numeroDeTables%6) == 0)
-            {
-                for(int k=1; k<=(numeroDeTables/6) ; k++)
-                {
+            if((numeroDeTables%6) == 0 && numeroDeTables != 0) {
+                for(int k=1; k<=(numeroDeTables/6) ; k++) {
 
-                    response = response + infoTables.get((k*6)-5).text();
-                    response = response + " - " + infoTables.get((k*6)-3).text();
-                    response = response + "\n" + infoTables.get((k*6)-1).text() +"\n\n";
+                    response += infoTables.get((k*6)-5).text();
+                    response += " - " + infoTables.get((k*6)-3).text();
+                    response += "\n" + infoTables.get((k*6)-1).text() +"\n\n";
 
 
                 }
 
+            } else {
+                // It is a SABi error message
+                Elements errorMessage = doc.select("p[style*=color: red]");
+                for (int i = 0; i < errorMessage.size(); i++) {
+                    response += errorMessage.get(i).text() + "\n";
+                }
             }
 
         } catch (IOException e) {
