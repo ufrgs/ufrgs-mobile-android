@@ -17,15 +17,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainRed"
+    android:background="#E34540"
     android:focusable="false"
     android:elevation="7dp"
     >
 
     <ImageView
         android:id="@+id/splash.ufrgs_logo"
-        android:src="@drawable/ic_launcher_splash"
-        android:layout_width="140dp"
+        android:src="@drawable/ufrgs_tocha"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_centerHorizontal="true"

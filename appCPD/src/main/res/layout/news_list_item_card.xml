@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/news_list_item_card.base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/news_list_item_card.card_layout"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/news_list_item_card_height"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/news_list_item_card.thumb_image"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@color/grey"/>
+
+        <TextView
+            android:id="@+id/news_list_item_card.title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:textIsSelectable="false"
+            android:textSize="15sp"
+
+            android:maxLines="4"
+
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginRight="14dp"
+
+            android:layout_toRightOf="@+id/news_list_item_card.thumb_image"
+            android:layout_toEndOf="@+id/news_list_item_card.thumb_image"
+
+            android:text="Super noticia para aparecer com no maximo 4 linhas no item"
+            />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

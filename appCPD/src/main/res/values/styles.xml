@@ -13,15 +13,7 @@
    - See the License for the specific language governing permissions and
    - limitations under the License.
    -->
-<resources>
-
-    <!--<color name="black">#000000</color>-->
-    <!--<color name="white">#ffffff</color>-->
-    <color name="defBlue">#2c2c7f</color>
-    <color name="darkBlue">#2c2c7f</color>
-    <color name="primaryColor">#e34540</color>
-    <color name="primaryColorDark">#D32F2F</color>
-    <color name="primaryColorAccent">@color/owl_dark</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -34,6 +26,8 @@
         <item name="colorControlHighlight">@color/white</item>
         <item name="android:textColor">@color/chumbo</item>
         <item name="android:textColorHint">@color/grey_very_dark</item>
+        <item name="android:windowSharedElementsUseOverlay" tools:targetApi="lollipop">false</item>
+
     </style>
 
     <style name="ButtonWhite" parent="Theme.AppCompat.Light.NoActionBar">
@@ -72,6 +66,62 @@
     <style name="menu_labels_style">
         <item name="android:background">@drawable/fab_label_background</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="UfrgsTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/ufrgs.colorPrimary</item>
+        <item name="colorPrimaryDark">@color/ufrgs.colorPrimaryDark</item>
+        <item name="colorAccent">@color/ufrgs.colorAccent</item>
+        <item name="android:textColorPrimary">@color/ufrgs.primaryText</item>
+        <item name="android:textColorSecondary">@color/ufrgs.secondaryText</item>
+        <item name="android:textColorHint">@color/ufrgs.primaryText</item>
+
+        <item name="android:actionBarStyle">@style/UfrgsTheme.ActionBar</item>
+
+        <item name="android:alertDialogTheme">@style/UfrgsTheme.Dialog</item>
+    </style>
+
+    <style name="UfrgsTheme.NoActionBar" parent="UfrgsTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="UfrgsTheme.EditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/ufrgs.colorPrimary</item>
+        <item name="colorControlActivated">@color/ufrgs.colorAccent</item>
+        <item name="colorControlHighlight">@color/ufrgs.colorAccent</item>
+    </style>
+
+    <style name="UfrgsTheme.ActionBar" parent="@android:style/Widget.ActionBar">
+        <item name="android:titleTextStyle">@style/UfrgsTheme.ActionBar.TextStyle</item>
+    </style>
+
+    <style name="UfrgsTheme.ActionBar.TextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/ufrgs.white</item>
+    </style>
+
+    <style name="UfrgsTheme.Dialog">
+        <item name="android:editTextStyle">@style/UfrgsTheme.EditText</item>
+    </style>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/mainRed</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Translucent" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="OwlHelpText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#888888</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

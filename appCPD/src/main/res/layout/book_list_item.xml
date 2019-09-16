@@ -14,91 +14,71 @@
    - See the License for the specific language governing permissions and
    - limitations under the License.
    -->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
 
-    <TextView
-        android:id="@+id/book_list_item.title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="false"
-        android:layout_marginTop="15dp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:textIsSelectable="false"
-        android:textSize="16sp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_toLeftOf="@+id/news_list_item.thumb_image"
-        android:layout_alignParentLeft="true"
-        android:paddingRight="60dp"
-        tools:text="O mundo codificado: por uma filosofia do design e da comunicação"
+    <ImageView
+        android:id="@+id/book.image"
+        android:layout_width="131dp"
+        android:layout_height="166dp"
+        android:layout_margin="6dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         />
 
-    <TextView
-        android:id="@+id/book_list_item.author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="false"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="6dp"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:layout_marginBottom="16dp"
-        android:layout_alignParentLeft="false"
-        android:layout_alignLeft="@+id/book_list_item.title"
-        android:layout_below="@+id/book_list_item.title"
-        android:textSize="14sp"
-        tools:text="Flusser, Villem"
-        />
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/book_list_item.author"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="6dp"
+        android:layout_margin="6dp"
+        android:layout_toRightOf="@+id/book.image"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
         >
 
         <TextView
-            android:id="@+id/book_list_item.library"
-            android:layout_width="match_parent"
+            android:id="@+id/book.date"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="false"
-            android:layout_toLeftOf="@+id/book_list_item.date"
-            android:maxLines="1"
-            android:layout_marginBottom="16dp"
-            android:textSize="14sp"
-            android:textColor="@color/grey_dark"
-            android:layout_weight="1"
-            tools:text="Biblioteca FBC"
+            tools:text="Data de devolução: "
+            android:textColor="@color/primaryColor"
+            android:textSize="16sp"
             />
 
         <TextView
-            android:id="@+id/book_list_item.date"
+            android:id="@+id/book.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:maxLines="1"
-            android:textSize="14sp"
-            android:textColor="@color/secondRed"
-            android:layout_alignTop="@+id/book_list_item.library"
-            tools:text="25/08/2015"
+            android:layout_marginTop="4dp"
+            tools:text="Título: "
+            android:textSize="16sp"
             />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/book.author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Autor: "
+            />
+
+        <TextView
+            android:id="@+id/book.year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Ano: "
+            />
+    </LinearLayout>
 
     <View
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#ddd"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/book.image"
+        android:background="@color/grey_light"
         />
-
 </RelativeLayout>

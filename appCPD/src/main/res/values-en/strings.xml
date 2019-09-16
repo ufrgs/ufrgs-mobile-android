@@ -17,11 +17,12 @@
 <resources>
     <string name="app_name">UFRGS Mobile</string>
     <string name="accept">Agree</string>
+    <string name="renew_now">Renew now</string>
     <string name="auto_renew">Auto renew</string>
     <string name="auto_renew_activate_warning_message">Your items will be renewed daily, since there no impediment for it. It is your responsability verify if all items were renewed.</string>
     <string name="connection_error_message">Connection error.</string>
     <string name="date_format">MM/dd/yyyy</string>
-    <string name="debt_word">debt</string>
+    <string name="debt_word">Debt</string>
     <string name="error">Error</string>
     <string name="library">Library</string>
     <string name="library_no_connection_error">It was not possible to connect with the library.\n Please verify your settings or try again.</string>
@@ -60,4 +61,36 @@
     <string name="password">Password</string>
     <string name="restaurants_to_show">Restaurants to show</string>
     <string name="witch_restaurants_to_show">Which restaurants to show?</string>
+    <string name="restaurant_closed_today">The restaurants are closed today.</string>
+    <string name="menu_is_unavailable">The menu is not available now.\nTry again later.</string>
+    <string name="loading">Loading</string>
+    <string name="forgot_password_question">Forgot your password?</string>
+    <string name="login">Login</string>
+    <string name="login_needed">You need to be logged in to access the library. Please use your UFRGS card number and password.</string>
+    <string name="request_ufrgs_login">Log in at UFRGS</string>
+    <string name="user">UFRGS Card Number</string>
+    <string name="wrong_user_or_password">User or password incorrect</string>
+    <string name="logout">Exit</string>
+    <string name="widget_config">Choose the Restaurant you want</string>
+    <string name="activate_autorenew">Activate auto renew</string>
+    <string name="autorenew_activated">Auto renew activated</string>
+    <string name="autorenew_deactivated">Auto renew deactivated</string>
+    <string name="deactivate_autorenew">Deactivate auto renew</string>
+    <string name="library_exit_message">When you leave, you will not receive self-renewal notification. Do you want to quit?</string>
+    <string name="library_loan_message">The loans on your behalf will be renewed daily, provided there is no impediment. Always stay logged in to receive self-renewal notifications. It is your responsibility to verify that all loans have been renewed.</string>
+    <string name="password_portal">Student portal password</string>
+    <string name="password_needed">Enter the password</string>
+    <string name="user_needed">Enter the UFRGS card</string>
+    <string name="ru_no_connection_error">Could not connect to RU. Please check your internet settings or try again.</string>
+    <string name="welcome">Welcome</string>
+    <string name="ticket_get_error">Problem acquiring information. Please try again later.</string>
+    <string name="ticket_get_error_cache">Problem acquiring information. Last update on </string>
+    <string name="ticket_zero">No Meals Available</string>
+    <string name="library_loan_message_logoff">There will be no more automatic renovations on your loans. Do you really disable the auto renew function?</string>
+    <string name="notification">Notifications</string>
+    <string name="ru_no_menu">Menu unavailable</string>
+    <string name="privacy_policy_message">By using this app you agree to our <a href="https://www.ufrgs.br/cpd/apps-privacy-policy/">Privacy Policiy</a>.</string>
+    <string name="privacy_policy_response">I am aware</string>
+    <string name="wrong_card_or_password">Error: incorrect user or password</string>
+    <string name="generic_login_failed">Error logging in</string>
 </resources>

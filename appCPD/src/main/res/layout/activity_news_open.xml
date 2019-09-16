@@ -20,11 +20,6 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 
-    <include
-		android:id="@+id/news_open.toolbar"
-		layout="@layout/toolbar"
-        />
-
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
@@ -43,48 +38,107 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:layout_gravity="center_horizontal"
-				android:layout_marginTop="0sp"
+				android:layout_marginTop="0dp"
 				android:layout_marginLeft="0dp"
 				android:layout_marginRight="0dp"
+				android:layout_marginBottom="0dp"
 				>
+
 
 				<ImageView
 					android:id="@+id/news_activity.picture"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/news_open_image_height"
 					android:layout_gravity="center_horizontal"
-					android:layout_marginTop="0sp"
-					android:adjustViewBounds="true"
-					android:scaleType="centerCrop"
+					android:layout_marginTop="0dp"
+					android:layout_marginRight="0dp"
+					android:layout_marginEnd="0dp"
 					tools:src="@drawable/ru1"
+					android:adjustViewBounds="true"
+					android:layout_weight="1"
+					android:scaleType="centerCrop"
+                    android:transitionName="@string/transition_name_news_image"
+					/>
+
+
+				<Button
+					android:id="@+id/news_activity.return_button"
+					android:layout_width="@dimen/news_open_button_size"
+					android:layout_height="@dimen/news_open_button_size"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="16dp"
+					android:layout_marginBottom="3dp"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentTop="true"
+					android:background="@drawable/ic_back_white_shadow"
+					/>
+
+				<Button
+					android:id="@+id/news_activity.zoom_button"
+					android:layout_width="@dimen/news_open_button_size"
+					android:layout_height="@dimen/news_open_button_size"
+					android:layout_alignParentTop="true"
+					android:layout_toLeftOf="@+id/news_activity.share_button"
+					android:layout_marginRight="12dp"
+					android:layout_marginTop="16dp"
+					android:background="@drawable/ic_zoom_white_shadow"
+					/>
+
+				<Button
+					android:id="@+id/news_activity.share_button"
+					android:layout_width="@dimen/news_open_button_size"
+					android:layout_height="@dimen/news_open_button_size"
+					android:layout_marginTop="16dp"
+					android:layout_marginRight="12dp"
+					android:layout_marginBottom="30dp"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentTop="true"
+					android:background="@drawable/ic_share_white_shadow"
 					/>
 
 				<TextView
 					android:id="@+id/news_activity.title"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="0sp"
-					android:paddingTop="10sp"
-					android:paddingLeft="20sp"
-					android:paddingRight="20sp"
-					android:paddingBottom="10sp"
 					android:layout_below="@+id/news_activity.picture"
-					android:textColor="#ffffff"
-					android:background="#e34540"
-					android:textAppearance="?android:attr/textAppearanceLarge"
-					tools:text="Super noticia para testar o layout com multiplas linhas na atividade"
-					/>
+					android:layout_alignParentLeft="true"
+					android:background="@null"
+					android:paddingLeft="20sp"
+					android:paddingTop="20sp"
+					android:paddingRight="20sp"
+					android:paddingBottom="6sp"
+					android:textColor="#333"
+					android:textSize="@dimen/news_open_title_font_size"
+					android:textStyle="bold"
+					tools:text="Super noticia para testar o layout com multiplas linhas na atividade" />
+
+				<TextView
+					android:id="@+id/news_activity.date"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/news_activity.title"
+					android:layout_alignParentLeft="true"
+					android:background="@null"
+					android:maxLines="1"
+					android:paddingLeft="20sp"
+					android:paddingTop="0sp"
+					android:paddingRight="20sp"
+					android:paddingBottom="14sp"
+					android:textColor="#888"
+					android:textSize="@dimen/news_open_date_font_size"
+					tools:text="11/04/2019 10:50" />
 
 				<TextView
 					android:id="@+id/news_activity.text"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="20dp"
-					android:paddingTop="10dp"
+					android:layout_marginTop="0sp"
+					android:paddingTop="20sp"
 					android:paddingLeft="20sp"
 					android:paddingRight="20sp"
-					android:layout_below="@+id/news_activity.title"
-					android:textSize="16sp"
+					android:paddingBottom="20sp"
+					android:layout_below="@+id/news_activity.date"
+					android:textSize="@dimen/news_open_content_font_size"
 					android:lineSpacingMultiplier="1.4"
 					tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in ligula viverra, volutpat nibh et, vehicula nunc. Morbi in volutpat metus, at luctus erat. Integer tincidunt, quam in pellentesque rutrum, nisl lacus auctor enim, vel facilisis ex felis id eros. Proin at neque placerat, feugiat mi vitae, tincidunt tellus. Aenean in dui quis nulla dignissim laoreet eget id purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum scelerisque nunc odio, at pulvinar leo ultricies vitae. Nam a pretium turpis. Donec facilisis mi eu varius fringilla. Nullam eget est non eros dictum feugiat et et magna. Phasellus dignissim diam nisi, in euismod metus ullamcorper ac. Suspendisse et enim dui. Sed porta faucibus sapien non viverra. Quisque volutpat turpis nec porta viverra. Curabitur at sagittis dolor."
 				/>

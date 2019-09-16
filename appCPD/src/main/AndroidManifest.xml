@@ -16,6 +16,7 @@
    -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cpd.ufrgsmobile"
     >
 
@@ -26,18 +27,23 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <permission android:name="com.cpd.ufrgsmobile.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.cpd.ufrgsmobile.permission.C2D_MESSAGE" />
 
     <application
-        android:name="com.cpd.application.App"
+        android:name="com.cpd.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_adaptative_launcher"
+
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        >
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="com.cpd.activities.SplashActivity"
+            android:name="com.cpd.ui.splash_screen.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,40 +52,98 @@
         </activity>
 
         <activity
-            android:name="com.cpd.activities.MainActivity"
+            android:name="com.cpd.ui.main_screen.MainActivity"
             android:label="@string/app_name" />
 
         <activity
-            android:name="com.cpd.activities.NewsOpenActivity"
+            android:name="com.cpd.ui.news_screen.news_detail.NewsOpenActivity"
             android:label="@string/app_name" />
 
         <activity
-            android:name="com.cpd.activities.NewsOpenImageActivity"
+            android:name="com.cpd.ui.news_screen.news_image.NewsOpenImageActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             />
 
         <activity
-            android:name="com.cpd.activities.MainPreferencesActivity"
+            android:name="com.cpd.utils.AppRegister"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             />
 
-        <receiver
-            android:name="com.cpd.receivers.LibraryRenewAlarmBroadcastReceiver"
+        <activity
+            android:name="com.cpd.ui.login_screen.login_dialog.LoginDialog"
+            android:theme="@style/Translucent"
             />
 
-        <receiver
-            android:name="com.cpd.receivers.BootUpReceiver"
-            android:enabled="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+        <activity
+            android:name="com.cpd.ui.tickets_screen.TicketsActivity"
+            android:theme="@style/Translucent"
+            />
+
+        <activity
+            android:name="com.cpd.ui.notifications_screen.NotificationsActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="com.cpd.widget.WidgetConfigActivity"
+            android:theme="@style/Translucent">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
+        </activity>
+
+        <receiver android:name="com.cpd.widget.WidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.cpd.appcpd.DATA_FETCHED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
         </receiver>
+
+        <service
+            android:name="com.cpd.widget.WidgetServices"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service android:name="com.cpd.widget.WidgetRemoteService" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="Obtenha uma chave em https://get.fabric.io/" />
+
+        <!--push gcm-->
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.example.gcm" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.cpd.gcm.UfrgsGcmListenerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.cpd.gcm.InstanceIDListener"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.cpd.gcm.RegistrationIntentService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

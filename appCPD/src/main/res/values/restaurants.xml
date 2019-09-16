@@ -15,16 +15,16 @@
    - limitations under the License.
    -->
 <resources>
-    <string-array name="restaurantArray">
+    <string-array name="restaurantArray" translatable="false">
         <item>Centro</item>
         <item>Saúde</item>
         <item>Vale</item>
         <item>Agronomia</item>
-        <item>Esef</item>
+        <item>Esefid</item>
         <item>Bloco 4</item>
     </string-array>
 
-    <string-array name="restaurantValues">
+    <string-array name="restaurantValues" translatable="false">
         <item>1</item>
         <item>2</item>
         <item>3</item>

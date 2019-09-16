@@ -1,0 +1,46 @@
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+<resources>
+
+    <integer name="library_center_weight">1</integer>
+    <integer name="library_lateral_weight">0</integer>
+    <integer name="news_columns">1</integer>
+    <integer name="restaurant_columns">1</integer>
+
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+
+    <dimen name="ru_card_header_height">74dp</dimen>
+
+    <dimen name="nav_bottom_height">60dp</dimen>
+
+    <dimen name="news_open_button_size">34dp</dimen>
+    <dimen name="news_open_buttons_view_height">70dp</dimen>
+    <dimen name="news_open_image_height">250dp</dimen>
+
+    <dimen name="news_list_item_no_image_height">85dp</dimen>
+    <dimen name="news_list_item_w_image_height">105dp</dimen>
+    <dimen name="news_list_item_highlight_height">210dp</dimen>
+    <dimen name="news_list_item_card_height">82dp</dimen>
+    <dimen name="news_list_item_card_width">120dp</dimen>
+
+    <dimen name="news_list_item_highlight_rounded_height">220dp</dimen>
+    <dimen name="owl_size">140dp</dimen>
+
+    <dimen name="fix_cardview">0dp</dimen>
+    <dimen name="fix_cardview_vertical">0dp</dimen>
+
+</resources>

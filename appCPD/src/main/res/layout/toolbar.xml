@@ -14,23 +14,20 @@
    - See the License for the specific language governing permissions and
    - limitations under the License.
    -->
-<android.support.v7.widget.Toolbar
+<androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:minHeight="?attr/actionBarSize"
-    android:maxHeight="?attr/actionBarSize"
     android:layout_height="?attr/actionBarSize"
     android:layout_width="match_parent"
     android:background="@color/mainRed"
-    android:elevation="5dp"
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:elevation="6dp"
     app:theme="@style/ToolbarStyle"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        >
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <ImageView
             android:id="@+id/toolbar.icon"
             android:layout_width="100dp"
@@ -38,18 +35,21 @@
             android:src="@drawable/ic_flame"
             />
 
-        <TextView
-            android:id="@+id/toolbar.title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text=""
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:maxLines="1"
-            android:textColor="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        <ImageView
+            android:id="@+id/ticket_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_tickets2"
+            android:layout_marginRight="16dp"
+            android:padding="4dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="?selectableItemBackground"
+            android:backgroundTint="@color/mainRed"
+            android:contentDescription="Verificar Tickets do RU"
+            android:visibility="gone"
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</android.support.v7.widget.Toolbar>
+</androidx.appcompat.widget.Toolbar>

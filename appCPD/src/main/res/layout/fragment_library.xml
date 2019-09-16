@@ -14,152 +14,178 @@
    - See the License for the specific language governing permissions and
    - limitations under the License.
    -->
-<LinearLayout
+<RelativeLayout
     android:id="@+id/library_fragment.layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/white"
     >
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="@integer/library_lateral_weight"
-        />
-
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/library_fragment.swipe_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         >
 
-        <android.support.design.widget.CoordinatorLayout
-            android:id="@+id/library_fragment.recycler"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="@integer/library_center_weight"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:focusableInTouchMode="true"
             >
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/library_fragment.user_info.layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="18dp"
                 >
 
-                <RelativeLayout
-                    android:id="@+id/library_fragment.user_info.layout"
+                <TextView
+                    android:id="@+id/library_fragment.user_info.name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="18dp"
-                    android:paddingTop="24dp"
-                    android:paddingBottom="24dp"
-                    android:paddingRight="18dp"
-                    >
+                    android:layout_marginBottom="16dp"
+                    android:textColor="#333"
+                    android:textSize="@dimen/library_username_font_size"
+                    android:textStyle="bold"
+                    android:maxLines="3"
+                    tools:text="Pedro que tem um enorme de grande nome bem grande para testar"
+                    />
 
-                    <TextView
-                        android:id="@+id/library_fragment.user_info.name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="22sp"
-                        android:textColor="@color/secondRed"
-                        android:layout_marginBottom="16dp"
-                        android:layout_alignLeft="@+id/library_fragment.user_info.extra_info"
-                        android:maxLines="3"
-                        android:singleLine="false"
-                        android:ellipsize="end"
-                        tools:text="Pedro que tem um enorme de grande nome bem grande para testar"
-                        />
 
-                    <TextView
-                        android:id="@+id/library_fragment.user_info.extra_info"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:lineSpacingExtra="5dp"
-                        android:layout_below="@+id/library_fragment.user_info.name"
-                        tools:text="5 emprestimos\n23 reservas\nR$67,00 débito"
-                        />
+                <TextView
+                    android:id="@+id/library_fragment.user_info.autorenew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_below="@+id/library_fragment.user_info.extra_info"
+                    tools:text="Autorenovar ativado"
+                    android:textSize="@dimen/library_extra_info_font_size"
+                    />
 
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/library_fragment.user_info.extra_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_below="@+id/library_fragment.user_info.name"
+                    android:textSize="@dimen/library_extra_info_font_size"
+                    tools:text="5 emprestimos\nR$67,00 débito"
+                    />
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="fill_parent"
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardElevation="5dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardElevation="5dp"
                     >
 
-                    <RelativeLayout
-                        android:id="@+id/library_fragment.books.layout"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/library_fragment.books.recycler"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:layout_marginRight="12dp"
-                        android:visibility="invisible"
-                        >
-
-                    <ImageView
-                        android:id="@+id/library_fragment.books.owl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/owl_sleeping"
-                        android:layout_centerInParent="true"
-                        android:layout_marginBottom="12dp"
-                        android:scaleType="center"
-                        />
-
-                    <TextView
-                        android:layout_below="@id/library_fragment.books.owl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/no_loan"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="12dp"
-                        />
-
-                    </RelativeLayout>
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/library_fragment.books.recycler"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
                         android:clickable="false"
                         android:elevation="5dp"
                         android:background="@color/white"
                         tools:listitem="@layout/book_list_item"
-                        tools:visibility="visible"
+                        tools:visibility="invisible"
                         />
 
-                </android.support.v7.widget.CardView>
+                    <LinearLayout
+                        android:id="@+id/library_fragment.owl_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="invisible"
+                        >
 
-            </LinearLayout>
+                        <ImageView
+                            android:layout_width="@dimen/owl_size"
+                            android:layout_height="@dimen/owl_size"
+                            android:src="@drawable/owl_crying"
+                            />
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/library_fragment.fab"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_margin="16dp"
-                android:clickable="true"
-                android:src="@drawable/ic_autorenew_white_24dp"
-                app:fabSize="normal"
-                app:layout_anchor="@id/library_fragment.user_info.layout"
-                app:layout_anchorGravity="bottom|right|end"
-                app:rippleColor="@color/white"
-                app:pressedTranslationZ="6dp"
-                />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/no_loan_books_found"
+                            style="@style/OwlHelpText"
+                            />
 
-        </android.support.design.widget.CoordinatorLayout>
+                    </LinearLayout>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="@integer/library_lateral_weight"
-        />
+        android:id="@+id/library_fragment_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/library_fragment_owl"
+            android:layout_width="@dimen/owl_size"
+            android:layout_height="@dimen/owl_size"
+            android:src="@drawable/owl_sleeping"
+            />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/library_fragment_owl_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/loading"
+            style="@style/OwlHelpText"
+            />
+
+        <Button
+            android:id="@+id/library_fragment_owl_retry_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TENTAR NOVAMENTE"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            />
+
+        <Button
+            android:id="@+id/library_fragment_owl_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAIR"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

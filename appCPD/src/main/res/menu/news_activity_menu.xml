@@ -23,8 +23,9 @@
         android:id="@+id/action_share"
         android:icon="@drawable/ic_share_white_24dp"
         android:title="@string/share_article"
+		android:contentDescription="@string/share_article"
         compat:showAsAction="ifRoom"
-        compat:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        compat:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
         />
 
 </menu>

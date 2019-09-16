@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
    - Copyright 2016 Universidade Federal do Rio Grande do Sul
    -
    - Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,37 +13,25 @@
    - See the License for the specific language governing permissions and
    - limitations under the License.
    -->
-<RelativeLayout
-	android:id="@+id/news_fragment.layout"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-    android:clickable="false"
-	>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_fragment.layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="false">
 
-	<android.support.v4.widget.SwipeRefreshLayout
-		android:id="@+id/news_fragment.swipe_layout"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/news_fragment.swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-		<android.support.v7.widget.RecyclerView
-			android:id="@+id/news_fragment.recycler"
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-            android:clickable="false"
-			>
-		</android.support.v7.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/news_fragment.recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"/>
 
-	</android.support.v4.widget.SwipeRefreshLayout>
-
-	<ProgressBar
-		android:id="@+id/news_fragment.progress_bar"
-		style="?android:attr/progressBarStyleLarge"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerVertical="true"
-		android:layout_centerHorizontal="true"
-		/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

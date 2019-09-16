@@ -32,8 +32,9 @@
     <string name="loan_word">empréstimo</string>
     <string name="loans_word">empréstimos</string>
     <string name="no_debt">Sem débitos</string>
-    <string name="debt_word">débito</string>
+    <string name="debt_word">Débito</string>
     <string name="renew">Renovação</string>
+    <string name="renew_now">Renovar agora</string>
     <string name="no_loan">Nenhum empréstimo</string>
     <string name="try_again">Tentar novamente</string>
     <string name="signing_in">Fazendo login</string>
@@ -41,13 +42,17 @@
     <string name="date_format">dd/MM/yyyy</string>
     <string name="no_books">Sem livros</string>
     <string name="auto_renew">Renovação automática</string>
+    <string name="logout">Sair</string>
     <string name="renewing_items">Renovando itens</string>
     <string name="no_reservation">Nenhuma reserva</string>
     <string name="page_not_found">Página não encontrada</string>
     <string name="menu_unavailable">Cardápio indisponível</string>
     <string name="no_restaurant_to_show">Nenhum RU para exibir</string>
     <string name="no_connection">Sem conexão</string>
+    <string name="notification">Notificaões</string>
 
+    <string name="restaurant_closed_today">Os RUs estão fechados hoje.</string>
+    <string name="menu_is_unavailable">O cardápio não está disponível agora.\nTente novamente mais tarde.</string>
     <string name="menu_not_ready_yet_message">O cardápio ainda não chegou</string>
     <string name="no_loan_books_found">Não foram encontrados livros emprestados</string>
     <string name="connection_error_message">Erro de conexão com a internet.</string>
@@ -61,8 +66,21 @@
     <string name="not_possible_to_renew_books_message">Não foi possível renovar seus itens. Por favor, tente novamente.</string>
     <string name="auto_renew_activate_warning_message">Seus itens serão renovados diariamente, desde que não haja impedimento.\nÉ de sua responsabilidade verificar se todos os itens foram renovados.</string>
     <string name="library_no_connection_error">Não foi possível se conectar com a biblioteca.\n Por favor, verifique suas configurações ou tente novamente.</string>
+    <string name="ru_no_connection_error">Não foi possível se conectar com o RU.\n Por favor, verifique suas configurações de internet ou tente novamente.</string>
+    <string name="ru_no_menu">Cardápio indisponível</string>
 
     <string name="reais_currency" translatable="false">R$</string>
+    <string name="yes" translatable="false">Sim</string>
+    <string name="no" translatable="false">Não</string>
+
+    <!--Library Strings-->
+    <string name="login_needed">Você precisa estar logado para acessar a área da biblioteca. Entre com seu cartão e senha do portal UFRGS.</string>
+    <string name="login">Entrar</string>
+    <string name="loading">Carregando</string>
+    <string name="library_exit_message">Ao sair você não receberá notificação de autorrenovação. Deseja sair?</string>
+    <string name="library_loan_message">Os empréstimos em seu nome serão renovados diariamente, desde que não haja qualquer impedimento.\nMantenha-se sempre logado para receber as notificações de autorrenovação.\nÉ de sua responsabilidade verificar se todos os empréstimos foram renovados.</string>
+    <string name="library_loan_message_logoff">Não haverá mais renovação automática diária dos empréstimos em seu nome. Você realmente deseja desativar a autorrenovação?</string>
+
 
     <!-- Preferences keys -->
     <string name="pref_library_category" translatable="false">pref_library</string>
@@ -74,8 +92,37 @@
     <string name="library_user">Usuário</string>
     <string name="library_user_message">Usuário utilizado na biblioteca</string>
     <string name="password">Senha</string>
+    <string name="password_portal">Senha do portal do aluno</string>
     <string name="library_password_message">Senha da biblioteca</string>
     <string name="witch_restaurants_to_show">Quais restaurantes exibir?</string>
     <string name="restaurants_to_show">Restaurantes a exibir</string>
 
+    <string name="request_ufrgs_login">Faça seu login na UFRGS</string>
+    <string name="user">Cartão UFRGS</string>
+    <string name="forgot_password_question">Esqueceu sua senha?</string>
+    <string name="wrong_user_or_password">Usuário ou senha incorreto\nLembre-se de utilizar a senha do PORTAL DO ALUNO</string>
+    <string name="user_needed">Informe o cartão da UFRGS</string>
+    <string name="password_needed">Informe a senha</string>
+
+    <string name="widget_config">Escolha o Restaurante desejado.</string>
+    <string name="autorenew_activated">Autorrenovar ativado</string>
+    <string name="activate_autorenew">Ativar Renovação Automática</string>
+    <string name="autorenew_deactivated">Autorrenovar desativado</string>
+    <string name="deactivate_autorenew">Desativar renovação automática</string>
+
+    <string name="ticket_get_error">Problema ao adquirir informações. Por favor tente novamente mais tarde.</string>
+    <string name="ticket_get_error_cache">Problema ao atualizar informações. Última atualização </string>
+    <string name="ticket_zero">Sem refeições disponíveis</string>
+
+    <string name="privacy_policy_message">Ao utilizar o app você concorda com as nossas <a href="https://www.ufrgs.br/cpd/apps-politica-de-privacidade/">Políticas de privacidade</a>.</string>
+    <string name="privacy_policy_response">Estou ciente</string>
+
+    <string name="welcome">Boas vindas</string>
+
+    <string name="transition_name_news_image" translatable="false">transition_name_news_image</string>
+    <string name="wrong_card_or_password">Erro: cartão ou senha incorretos</string>
+
+    <string name="generic_login_failed">Erro ao realizar login</string>
+
+    <string name="dal_click_firebase_event" translatable="false">dal_click_firebase_event</string>
 </resources>

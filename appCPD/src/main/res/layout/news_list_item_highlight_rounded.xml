@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   - Copyright 2016 Universidade Federal do Rio Grande do Sul
+   -
+   - Licensed under the Apache License, Version 2.0 (the "License");
+   - you may not use this file except in compliance with the License.
+   - You may obtain a copy of the License at
+   -
+   -     http://www.apache.org/licenses/LICENSE-2.0
+   -
+   - Unless required by applicable law or agreed to in writing, software
+   - distributed under the License is distributed on an "AS IS" BASIS,
+   - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   - See the License for the specific language governing permissions and
+   - limitations under the License.
+   -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/news_list_item_highlight_rounded.layout"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/news_list_item_highlight_rounded_height"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:layout_marginBottom="1dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/news_list_item_highlight_rounded.card_layout"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/news_list_item_highlight_rounded.thumb_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ru2"
+            android:transitionName="@string/transition_name_news_image"
+            />
+
+        <ImageView
+            android:id="@+id/news_list_item_highlight_rounded.degrade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            tools:src="@drawable/black_degrade"
+            />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/news_list_item_highlight_rounded.title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="end"
+                android:textIsSelectable="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/news_list_item_highlight_rounded_title_font_size"
+                android:textStyle="bold"
+
+                android:shadowColor="#333333"
+                android:shadowRadius="2"
+                android:shadowDx="2"
+                android:shadowDy="2"
+
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="2dp"
+
+                android:backgroundTint="@color/green"
+
+                tools:text="Super noticia para aparecer com quantas linhas precisar no item"
+                />
+
+            <TextView
+                android:id="@+id/news_list_item_highlight_rounded.content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginRight="16dp"
+
+                android:ellipsize="end"
+                android:maxLines="3"
+
+                android:textColor="#EEEEEE"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/news_list_item_highlight_rounded_content_font_size"
+                tools:text="Conteúdo da super noticia para aparecer com no máximo 3 linhas." />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
