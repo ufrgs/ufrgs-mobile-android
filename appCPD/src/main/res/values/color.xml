@@ -15,6 +15,11 @@
    - limitations under the License.
    -->
 <resources>
+
+    <color name="primaryColor">#e34540</color>
+    <color name="primaryColorDark">#D32F2F</color>
+    <color name="primaryColorAccent">@color/owl_dark</color>
+
     <color name="chumbo">#212121</color>
     <color name="white">#ffffff</color>
     <color name="green">#16a086</color>
@@ -29,9 +34,28 @@
     <color name="holo_blue2">#0099cc</color>
     <color name="mainRed">#e34540</color>
     <color name="secondRed">#D32F2F</color>
-    <color name="black_semi_transparent">#B2000000</color>
+    <color name="black_semi_transparent">#73000000</color>
+    <color name="satusbar_transparent">#7d2623</color>
+
+    <color name="defBlue">#2c2c7f</color>
+    <color name="darkBlue">#2c2c7f</color>
+
 
     <color name="owl_dark">#475cc6</color>
-
     <color name="pureRed">#FFFF0000</color>
+
+    <color name="ufrgs.colorPrimary">#0085CC</color>
+    <color name="ufrgs.colorPrimaryDark">#006aa3</color>
+    <color name="ufrgs.colorPrimaryLight">#3399d3</color>
+    <color name="ufrgs.colorAccent">#0085CC</color>
+    <color name="ufrgs.primaryText">#212121</color>
+    <color name="ufrgs.secondaryText">#727272</color>
+    <color name="ufrgs.divider">#b6b6b6</color>
+    <color name="ufrgs.white">#ffffff</color>
+
+    <color name="ufrgs.red">#FF0000</color>
+
+    <color name="ufrgs.backgroundWhite">#fafafa</color>
+    <color name="ufrgs.backgroundTransparent">#00000000</color>
+    <color name="ufrgs.blackTransparent">#44000000</color>
 </resources>

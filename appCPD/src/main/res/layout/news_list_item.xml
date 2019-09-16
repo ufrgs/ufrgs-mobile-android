@@ -15,75 +15,61 @@
    - limitations under the License.
    -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/news_list_item.layout"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/news_list_item_w_image_height"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:clickable="true"
     android:focusable="false"
     android:focusableInTouchMode="false"
-    android:layout_marginBottom="1dp"
     android:layout_marginRight="2dp">
 
     <TextView
         android:id="@+id/news_list_item.title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="false"
-        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:ellipsize="end"
-        android:maxLines="2"
         android:textIsSelectable="false"
-        android:textSize="16sp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_toLeftOf="@+id/news_list_item.thumb_image"
-        android:layout_alignParentLeft="true"
-        tools:text="Super noticia para aparecer com duas linhas no item"
+        android:textSize="@dimen/news_list_item_font_size"
+
+        android:maxLines="4"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        android:layout_toRightOf="@+id/news_list_item.card_layout"
+
+        tools:text="Super noticia para aparecer com no maximo 4 linhas no item"
         />
 
-    <TextView
-        android:id="@+id/news_list_item.date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/news_list_item.title"
-        android:layout_alignParentRight="false"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="6dp"
-        android:maxLines="1"
-        android:textSize="12sp"
-        android:layout_marginBottom="16dp"
-        android:layout_alignParentLeft="false"
-        android:layout_alignLeft="@+id/news_list_item.title"
-        tools:text="22/01/16 - 18:50"
-        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/news_list_item.card_layout"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="3dp"
+        android:layout_width="@dimen/news_list_item_card_width"
+        android:layout_height="@dimen/news_list_item_card_height"
+        android:layout_marginLeft="22dp"
+
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/news_list_item.thumb_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher"
+            android:transitionName="@string/transition_name_news_image"
+            />
+
+    </androidx.cardview.widget.CardView>
 
 
-    <ImageView
-        android:id="@+id/news_list_item.thumb_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:adjustViewBounds="false"
-        android:maxHeight="60dp"
-        android:maxWidth="80dp"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="16dp"
-        android:layout_alignParentRight="true"
-        tools:src="@mipmap/ic_launcher"
-        />
-
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#ddd"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentBottom="true"
-        />
 
 
 </RelativeLayout>

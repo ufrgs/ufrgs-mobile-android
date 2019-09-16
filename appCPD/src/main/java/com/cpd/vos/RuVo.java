@@ -15,7 +15,8 @@
  */
 package com.cpd.vos;
 
-import android.support.annotation.NonNull;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Holds information about one RU.
@@ -24,17 +25,13 @@ import android.support.annotation.NonNull;
  * @author Theodoro Mota
  * @version 2.0
  */
-public class RuVo implements Comparable<RuVo>{
-    public int id = 0;
+public class RuVo {
 
-    public String nameId = null;
-    public String place = null;
-    public String menu = null;
+    @SerializedName("nome")
+    @Expose
+    public String nome;
+    @SerializedName("cardapio")
+    @Expose
+    public String cardapio;
 
-    public boolean error = false;
-
-    @Override
-    public int compareTo(@NonNull RuVo ruVo) {
-        return this.id - ruVo.id;
-    }
 }

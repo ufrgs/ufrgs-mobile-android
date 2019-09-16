@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tab_news"
+        android:enabled="true"
+        android:icon="@drawable/ic_news"
+        android:title="@string/news"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/tab_ru"
+        android:enabled="true"
+        android:icon="@drawable/ic_ru"
+        android:title="@string/restaurant"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/tab_library"
+        android:enabled="true"
+        android:icon="@drawable/ic_biblioteca"
+        android:title="@string/library"
+        app:showAsAction="ifRoom" />
+</menu>

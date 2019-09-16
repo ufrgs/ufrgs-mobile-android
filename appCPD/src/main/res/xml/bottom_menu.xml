@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_news"
+        icon="@drawable/ic_news"
+        title="@string/news" />
+    <tab
+        id="@+id/tab_ru"
+        icon="@drawable/ic_ru"
+        title="@string/restaurant" />
+    <tab
+        id="@+id/tab_library"
+        icon="@drawable/ic_biblioteca"
+        title="@string/library" />
+</tabs>

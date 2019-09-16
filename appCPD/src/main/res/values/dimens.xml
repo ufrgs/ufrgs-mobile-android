@@ -23,4 +23,37 @@
     <dimen name="activity_horizontal_margin">0dp</dimen>
     <dimen name="activity_vertical_margin">0dp</dimen>
 
+    <dimen name="ru_card_header_height">74dp</dimen>
+    <dimen name="ru_number_font_size">16sp</dimen>
+    <dimen name="ru_name_font_size">15sp</dimen>
+    <dimen name="ru_menu_font_size">16sp</dimen>
+
+    <dimen name="nav_bottom_height">60dp</dimen>
+
+    <dimen name="news_open_button_size">34dp</dimen>
+    <dimen name="news_open_buttons_view_height">70dp</dimen>
+    <dimen name="news_open_image_height">250dp</dimen>
+    <dimen name="news_open_title_font_size">22sp</dimen>
+    <dimen name="news_open_date_font_size">12sp</dimen>
+    <dimen name="news_open_content_font_size">16sp</dimen>
+
+
+    <dimen name="news_list_item_no_image_height">85dp</dimen>
+    <dimen name="news_list_item_w_image_height">105dp</dimen>
+    <dimen name="news_list_item_highlight_height">210dp</dimen>
+    <dimen name="news_list_item_card_height">82dp</dimen>
+    <dimen name="news_list_item_card_width">120dp</dimen>
+    <dimen name="news_list_item_font_size">15sp</dimen>
+
+    <dimen name="news_list_item_highlight_rounded_title_font_size">18sp</dimen>
+    <dimen name="news_list_item_highlight_rounded_content_font_size">13sp</dimen>
+    <dimen name="news_list_item_highlight_rounded_height">220dp</dimen>
+    <dimen name="owl_size">140dp</dimen>
+
+    <dimen name="fix_cardview">-3dp</dimen>
+    <dimen name="fix_cardview_vertical">-3dp</dimen>
+
+    <dimen name="library_username_font_size">22sp</dimen>
+    <dimen name="library_extra_info_font_size">14sp</dimen>
+
 </resources>
