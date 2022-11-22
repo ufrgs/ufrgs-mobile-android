@@ -1,24 +1,26 @@
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.cpd.ufrgsmobile"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 31
         versionCode 76
         versionName "3.0.6"
 
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
 
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     buildTypes {
@@ -39,6 +41,11 @@ android {
 
     androidExtensions {
         experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -102,8 +109,7 @@ dependencies {
 
     implementation('com.github.lowlevel-studios:storo:1.1.0') { transitive = true }
 
-
-    api('br.ufrgs:ufrgsapi:1.1.0@aar') { transitive = true }
+    implementation 'com.github.fernandozanutto:ufrgs-sdk-java:0.3'
 }
 
 apply plugin: 'com.google.gms.google-services'

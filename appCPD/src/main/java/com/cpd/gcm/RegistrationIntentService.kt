@@ -24,7 +24,7 @@ class RegistrationIntentService : IntentService(TAG) {
 
         try {
             val instanceID = InstanceID.getInstance(this)
-            val token = instanceID.getToken(getString(R.string.gcm_defaultSenderId), GoogleCloudMessaging.INSTANCE_ID_SCOPE, null)
+            val token = "" //instanceID.getToken(getString(R.string.gcm_defaultSenderId), GoogleCloudMessaging.INSTANCE_ID_SCOPE, null)
 
             Log.i(TAG, "GCM Registration Token: $token")
 

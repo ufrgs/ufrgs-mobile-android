@@ -2,7 +2,7 @@
 
 buildscript {
 
-    ext.kotlin_version = '1.2.71'
+    ext.kotlin_version = '1.6.21'
     ext.anko_version = '0.10.4'
 
     repositories {
@@ -11,7 +11,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:7.0.4'
         classpath 'com.google.gms:google-services:4.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'io.fabric.tools:gradle:1.+'
@@ -24,12 +24,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
-        maven { url  "http://dl.bintray.com/ufrgs/maven" }
-        maven { url 'http://dl.bintray.com/amulyakhare/maven' }
         maven { url "https://maven.google.com" }
         maven { url "https://jitpack.io" }
         google()
-        mavenCentral()
     }
 }

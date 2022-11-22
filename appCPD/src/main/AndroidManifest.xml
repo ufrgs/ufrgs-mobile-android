@@ -44,6 +44,7 @@
 
         <activity
             android:name="com.cpd.ui.splash_screen.SplashActivity"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,47 +54,56 @@
 
         <activity
             android:name="com.cpd.ui.main_screen.MainActivity"
+            android:exported="false"
             android:label="@string/app_name" />
 
         <activity
             android:name="com.cpd.ui.news_screen.news_detail.NewsOpenActivity"
+            android:exported="false"
             android:label="@string/app_name" />
 
         <activity
             android:name="com.cpd.ui.news_screen.news_image.NewsOpenImageActivity"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             />
 
         <activity
             android:name="com.cpd.utils.AppRegister"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
             />
 
         <activity
             android:name="com.cpd.ui.login_screen.login_dialog.LoginDialog"
+            android:exported="false"
             android:theme="@style/Translucent"
             />
 
         <activity
             android:name="com.cpd.ui.tickets_screen.TicketsActivity"
+            android:exported="false"
             android:theme="@style/Translucent"
             />
 
         <activity
             android:name="com.cpd.ui.notifications_screen.NotificationsActivity"
+            android:exported="false"
             android:screenOrientation="portrait"
             />
         <activity
             android:name="com.cpd.widget.WidgetConfigActivity"
+            android:exported="false"
             android:theme="@style/Translucent">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.cpd.widget.WidgetProvider" >
+        <receiver android:name="com.cpd.widget.WidgetProvider"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.cpd.appcpd.DATA_FETCHED" />

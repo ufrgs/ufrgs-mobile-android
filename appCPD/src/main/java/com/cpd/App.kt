@@ -34,7 +34,7 @@ class App : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        Fabric.with(this, Answers(), Crashlytics())
+        //Fabric.with(this, Answers(), Crashlytics())
 
         StoroBuilder.configure(500000)  // maximum size to allocate in bytes
                 .setDefaultCacheDirectory(this)
