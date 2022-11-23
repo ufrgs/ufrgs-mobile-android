@@ -63,7 +63,7 @@ class LoginFragment : Fragment(), LoginScreenContract.View {
     }
 
     override fun onUserRegister() {
-        mPreseter!!.registerGcmToken(mUfrgsTokenManager!!)
+        mPreseter!!.registerGcmToken(mUfrgsTokenManager)
         val rootFragment = parentFragment as LibraryRootFragment?
         rootFragment!!.configureNestedFragments()
     }

@@ -86,7 +86,7 @@ class LoginDialog : AppCompatActivity() {
 
     private fun getTokenFromAPI(user: String, password: String) {
         mProgressDialog!!.show()
-        mUfrgsTokenManager!!.requestNewToken(this, user, password, object : UfrgsTokenManager.OnTokenListener {
+        mUfrgsTokenManager.requestNewToken(this, user, password, object : UfrgsTokenManager.OnTokenListener {
 
             override fun onTokenReady(token: UfrgsToken) {
                 mProgressDialog!!.dismiss()

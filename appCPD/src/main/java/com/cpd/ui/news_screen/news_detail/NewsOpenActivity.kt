@@ -57,14 +57,20 @@ class NewsOpenActivity : AppCompatActivity() {
 
     private val defaultShareIntent: Intent
         get() {
-            val image = mNewsVo!!.image
-            val intent = Intent(android.content.Intent.ACTION_SEND)
+            val intent = Intent(Intent.ACTION_SEND)
 
             intent.type = "text/plain"
             intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name) + " - " + mNewsVo!!.titulo)
 
-            val url = mNewsVo!!.imageThumb.split("/image_thumb".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
-            intent.putExtra(android.content.Intent.EXTRA_TEXT, url)
+            val url = if (mNewsVo!!.imageThumb != null) {
+                mNewsVo!!.imageThumb.split("/image_thumb").dropLastWhile { it.isEmpty() }.toTypedArray()[0]
+            } else if (mNewsVo!!.imageLarge != null) {
+                mNewsVo!!.imageLarge.split("/image_large").dropLastWhile { it.isEmpty() }.toTypedArray()[0]
+            } else {
+                mNewsVo!!.image.url.split("/@@images").dropLast(1)[0]
+            }
+
+            intent.putExtra(Intent.EXTRA_TEXT, url)
 
             return intent
         }

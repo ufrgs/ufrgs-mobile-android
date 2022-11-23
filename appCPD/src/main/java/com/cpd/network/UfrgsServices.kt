@@ -21,7 +21,6 @@ interface UfrgsServices {
     fun getRuMenu(@Query("v") appVersion: String): Observable<RuResponse>
 
     @GET("v1/r-u-tiquetes/disponiveis")
-
     fun getTickets(@Header("Authorization") authorizationHeader: String): Observable<ApiAnswer<TicketsResponse>>
 
     @GET("getnotificacoes")

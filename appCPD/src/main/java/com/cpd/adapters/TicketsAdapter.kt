@@ -39,7 +39,7 @@ class TicketsAdapter : RecyclerView.Adapter<TicketsAdapter.TicketsVH>() {
     class TicketsVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(tickets : Tickets){
             val maxBarSize = LayoutUtils.spToPx(248)
-            val percent = java.lang.Float.valueOf(tickets.nrrefeicoesresta) / java.lang.Float.valueOf(tickets.nrrefeicoestotal)!!
+            val percent = java.lang.Float.valueOf(tickets.nrrefeicoesresta) / java.lang.Float.valueOf(tickets.nrrefeicoestotal)
             val realSize = (maxBarSize * percent).toInt()
 
             itemView.token.text = tickets.nrtiquete

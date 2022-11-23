@@ -27,7 +27,6 @@ object ApiBuilder {
 
     fun retrofitBuilder(baseUrl : String) : Retrofit {
         return Retrofit.Builder()
-//                .baseUrl(BuildConfig.API_BASE_URL)
                 .baseUrl(baseUrl)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(getClient())
