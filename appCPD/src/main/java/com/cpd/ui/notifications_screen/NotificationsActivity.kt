@@ -32,7 +32,7 @@ class NotificationsActivity : AppCompatActivity() {
         get() {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name) + " - " + mNotificationsVo!!.titulo)
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name) + " - " + mNotificationsVo.titulo)
             return intent
         }
 

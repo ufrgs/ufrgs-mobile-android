@@ -43,7 +43,7 @@ class WidgetViewFactory(val context: Context, intent: Intent) : RemoteViewsServi
 
     override fun getViewAt(i: Int): RemoteViews {
 
-        val ruIndex = WidgetUtils.getWidgetRU(context!!)
+        val ruIndex = WidgetUtils.getWidgetRU(context)
         changeWidgetTitle(ruIndex)
 
         val ru = mRuList[ruIndex]

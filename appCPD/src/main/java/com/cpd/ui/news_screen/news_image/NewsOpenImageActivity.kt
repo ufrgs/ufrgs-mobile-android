@@ -103,7 +103,7 @@ class NewsOpenImageActivity : AppCompatActivity() {
 
                             if (failHandler != null) {
                                 val handler = Handler()
-                                handler.post(failHandler!!)
+                                handler.post(failHandler)
                             }
 
                         }

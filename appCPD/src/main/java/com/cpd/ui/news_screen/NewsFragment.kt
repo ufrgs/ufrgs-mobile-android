@@ -15,16 +15,12 @@
  */
 package com.cpd.ui.news_screen
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
@@ -37,11 +33,7 @@ import com.cpd.ui.news_screen.news_detail.NewsOpenActivity
 import com.cpd.utils.AppTags
 import com.cpd.utils.CacheUtils
 import com.cpd.utils.ItemClickSupport
-import kotlinx.android.synthetic.main.activity_news_open.*
-import kotlinx.android.synthetic.main.activity_news_open_image.*
 import kotlinx.android.synthetic.main.fragment_news.view.*
-import kotlinx.android.synthetic.main.news_list_item_highlight_rounded.view.*
-import android.util.Pair as UtilPair
 import androidx.core.util.Pair
 import kotlinx.android.synthetic.main.news_list_item.view.*
 
@@ -133,7 +125,7 @@ class NewsFragment : Fragment(), NewsScreenContract.View, ItemClickSupport.OnIte
         val columnsNumber = activity!!.resources.getInteger(R.integer.news_columns)
         val staggeredGridLayoutManager = StaggeredGridLayoutManager(columnsNumber, StaggeredGridLayoutManager.VERTICAL)
 
-        staggeredGridLayoutManager!!.spanCount = columnsNumber
+        staggeredGridLayoutManager.spanCount = columnsNumber
 
         return staggeredGridLayoutManager
     }

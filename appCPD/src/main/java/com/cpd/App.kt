@@ -15,7 +15,6 @@
  */
 package com.cpd
 
-import android.app.Application
 import androidx.multidex.MultiDexApplication
 import br.ufrgs.ufrgsapi.UfrgsAPI
 import com.crashlytics.android.Crashlytics
@@ -34,7 +33,7 @@ class App : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        Fabric.with(this, Answers(), Crashlytics())
+        // Fabric.with(this, Answers(), Crashlytics())
 
         StoroBuilder.configure(500000)  // maximum size to allocate in bytes
                 .setDefaultCacheDirectory(this)

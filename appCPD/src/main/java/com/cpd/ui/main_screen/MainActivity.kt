@@ -81,14 +81,16 @@ class MainActivity : AppCompatActivity(), MainContract.View, BottomNavigationVie
         // tenta pegar o id do item que estava selecionado
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("navBarSelectedId")) {
-                navBarSelectedId = savedInstanceState.getInt("navBarSelectedId");
+                navBarSelectedId = savedInstanceState.getInt("navBarSelectedId")
             }
         }
 
-        if (intent.getStringExtra("long") != null)
-            alert(intent.getStringExtra("long"), "Resultado da Renovação") {
+        if (intent.getStringExtra("long") != null) {
+            val message = intent.getStringExtra("long") ?: ""
+            alert(message, "Resultado da Renovação") {
                 yesButton { d -> d.dismiss() }
             }.show()
+        }
 
         requestedOrientation = if (resources.getBoolean(R.bool.portrait_only)) {
             ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT
@@ -219,9 +221,9 @@ class MainActivity : AppCompatActivity(), MainContract.View, BottomNavigationVie
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState?.putInt("navBarSelectedId", navBarSelectedId)
+        outState.putInt("navBarSelectedId", navBarSelectedId)
     }
 
     fun showLibraryMenu(showMenu: Boolean) {

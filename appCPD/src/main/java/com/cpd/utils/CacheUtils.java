@@ -3,8 +3,6 @@ package com.cpd.utils;
 import com.cpd.network.models.News;
 import com.cpd.network.models.Ru;
 import com.cpd.network.models.Tickets;
-import com.cpd.vos.NewsVo;
-import com.cpd.vos.RuVo;
 import com.google.gson.internal.LinkedTreeMap;
 
 import java.text.SimpleDateFormat;
