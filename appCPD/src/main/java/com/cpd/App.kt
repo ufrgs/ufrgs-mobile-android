@@ -17,9 +17,6 @@ package com.cpd
 
 import androidx.multidex.MultiDexApplication
 import br.ufrgs.ufrgsapi.UfrgsAPI
-import com.crashlytics.android.Crashlytics
-import com.crashlytics.android.answers.Answers
-import io.fabric.sdk.android.Fabric
 import st.lowlevel.storo.StoroBuilder
 
 /**

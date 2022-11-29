@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cpd.network.models.Tickets
 import com.cpd.ufrgsmobile.R
 import com.cpd.utils.LayoutUtils
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.item_ticket.view.*
 
 /**
@@ -25,6 +26,9 @@ class TicketsAdapter : RecyclerView.Adapter<TicketsAdapter.TicketsVH>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketsVH {
+        val firebaseAnalytics = FirebaseAnalytics.getInstance(parent.context)
+        firebaseAnalytics.logEvent("view_ticket_open_event", null)
+
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_ticket, parent, false)
         return TicketsVH(itemView)
     }

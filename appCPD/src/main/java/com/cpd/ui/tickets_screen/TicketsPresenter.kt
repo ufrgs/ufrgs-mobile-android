@@ -17,9 +17,9 @@ class TicketsPresenter(private val mView: TicketsContract.View, private val cont
 
     override fun getTickets() {
 
-        val token = ""
+        val token = "Bearer " + UfrgsTokenManager().getToken(context).accessToken
 
-        val retrofit = ApiBuilder.retrofitBuilder("")
+        val retrofit = ApiBuilder.retrofitBuilder("https://api.ufrgs.br/")
         val service = retrofit.create(UfrgsServices::class.java)
         val observable = service.getTickets(token)
 

@@ -118,10 +118,6 @@
 
         <service android:name="com.cpd.widget.WidgetRemoteService" />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="Obtenha uma chave em https://get.fabric.io/" />
-
         <!--push gcm-->
 
         <receiver
@@ -153,6 +149,18 @@
                 <action android:name="com.google.android.gms.iid.InstanceID"/>
             </intent-filter>
         </service>
+
+        <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
+
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+
+        <meta-data android:name="firebase_analytics_collection_deactivated" android:value="false"
+            tools:replace="android:value"/>
 
     </application>
 
